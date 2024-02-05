@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./Develop/utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 const licenses = ['Null', 'MIT', 'BSD', 'GPL', 'Apache']
 
@@ -71,7 +71,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then (answers => {
-        writeToFile(generateMarkdown(answers))
+        const markdown = generateMarkdown(answers);
         writeToFile("./README.md", markdown);
         });
         

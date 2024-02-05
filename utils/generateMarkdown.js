@@ -56,7 +56,7 @@ ${renderLicenseBadge(data.license)}
 ${data.description}
 
 ${renderLicenseSection(data.license)}
-`;
+`.trim();
 }
 
 module.exports = generateMarkdown;
